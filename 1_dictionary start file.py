@@ -132,15 +132,19 @@ print()
 print('*****  end section 6 ********')
 print()
 
-'''
+
 
 print()
-print('*****  start section 7 - using pop method ********')
+print('*****  start section 7 - using pop method ********') #gives you a key-value pair and deletes it from the dictionary
 print()
 
 
+#a = phonebook.pop('Chris', 'not found')
+#print(a)
 
+#print(' ')
 
+#print(phonebook)
 
 
 print()
@@ -150,12 +154,14 @@ print()
 
 
 print()
-print('*****  start section 8 - using popitem ********')
+print('*****  start section 8 - using popitem ********') #should randomly select a key-value pair and pop it out
 print()
 
+#a = phonebook.popitem()
 
+#print(a) #for some reason, it's always choosing the last element of the dictionary. it *should* be random! 
 
-
+#print(phonebook)
 
 
 print()
@@ -165,11 +171,24 @@ print()
 
 
 print()
-print('*****  start section 9 - using random and converting to list ********')
+print('*****  start section 9 - using random and converting to list ********') #alternative to popitem, which is not working
 print()
 
+#long method: 
+
+list_of_keys = list(phonebook) #default in dictionaries is always to get a list of the keys!
+print(list_of_keys)
+
+random_key = random.choice(list_of_keys) #don't forget to import random at the top!
+print(random_key)
+
+random_value = phonebook[random_key] #gives you the value 
+print(random_value)
 
 
+#short method (much more efficient): 
+random_value = phonebook[random.choice(list(phonebook))]
+print(random_value)
 
 
 print()
@@ -177,7 +196,6 @@ print('*****  end section 9 ********')
 print()
 
 
-'''
 
 
 

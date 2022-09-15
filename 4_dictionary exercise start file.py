@@ -2,15 +2,15 @@
 
 def main():
     # Create a deck of cards.
-   
+    deck = create_deck() #empty because the function doesn't have any arguments (see below)
 
     # Get the number of cards to deal.
-    num_cards = int(input('How many cards should I deal? '))
+    num_cards = int(input('How many cards should I deal? ')) #saves the value for the value-returning function
 
 
 
     # Deal the cards.
-
+    deal_cards(deck, num_cards) #not a value-returning function, so you don't have to use a variable to save return values
 
     
     
@@ -45,33 +45,41 @@ def create_deck():
             'Queen of Diamonds':10, 'King of Diamonds': 10}
 
     # Return the deck.
-
+    return deck #therefore, this is a value-returning function. When you return a value, you have to save it into a variable! 
 
 
 
 # The deal_cards function deals a specified number of cards
 # from the deck.
 
-def deal_cards(deck, number):
+
+def deal_cards(deck, number): 
     # Initialize an accumulator for the hand value.
 
+    handValue = 0
     
     
 
     # Make sure the number of cards to deal is not
     # greater than the number of cards in the deck.
 
+    if number > 52: 
+        number = 52 #we will reset for the user 
     
     
 
     # Deal the cards and accumulate their values.
-    
+    import random
+    for count in range (number):
+        card = random.choice(list(deck))
+        print(card)
 
-
+        value = deck[card]
+        handValue += value 
     
 
     # Display the value of the hand.
-
+    print('The value of the hand is', handValue)
     
     
 
