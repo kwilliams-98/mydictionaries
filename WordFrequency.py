@@ -1,3 +1,4 @@
+
 #read the file into the program 
 
 infile = open('sometext.txt', 'r')
@@ -11,7 +12,6 @@ mydictionary = {}
 
 for line in infile: 
     words = line.split()
-
 
     for word in words: 
         if word in mydictionary: 
