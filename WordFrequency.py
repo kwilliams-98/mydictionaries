@@ -1,7 +1,6 @@
 #read the file into the program 
 
 infile = open('sometext.txt', 'r')
-#textfile = infile.read()
 
 #create a dictionary 
 
@@ -11,12 +10,17 @@ mydictionary = {}
 #create for loop 
 
 for line in infile: 
-    for word in line.split():
-        print(word)
+    words = line.split()
 
 
+    for word in words: 
+        if word in mydictionary: 
+            mydictionary[word] = mydictionary[word] + 1
+        else: 
+            mydictionary[word] = 1  
 
-
+for key in list(mydictionary.keys()):
+    print(key, ':', mydictionary[key])
 
 
 
